@@ -4,12 +4,15 @@ let roll = [];
 let num;
 let play;
 let rollButton; 
+let canvas;
 
 function setup(){
-	createCanvas(250, 500);
-	createElement('br');
-	createElement('br');
-	createA('https://en.wikipedia.org/wiki/Royal_Game_of_Ur', 'Royal Game of Ur Wiki', '_blank');	
+	canvas = createCanvas(250, 500);
+	let x = (windowWidth - width) / 2;
+  	canvas.position(x, 75);
+	// createElement('br');
+	// createElement('br');
+	// createA('https://en.wikipedia.org/wiki/Royal_Game_of_Ur', 'Royal Game of Ur Wiki', '_blank');
 	
 	let gameSet = new Game(width, height);
 	play = new Play(); // creating rules for game
@@ -47,3 +50,5 @@ function draw(){
 
 	noLoop();
 };
+
+window.onresize = function(){ location.reload(); }
